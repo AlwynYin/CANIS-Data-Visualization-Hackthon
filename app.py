@@ -196,13 +196,13 @@ app.layout = html.Div(
                                                 drop_lan,
                                             ],
                                             style={
-                                                "width": "70%"
+                                                "width": "60%"
                                             },
                                         ),
                                         html.Div(
-                                            [],
+                                            ["Number of media entites:"],
                                             style={
-                                                "width": "5%"
+                                                "width": "15%"
                                             },
                                         ),
                                         html.Div(
@@ -282,6 +282,9 @@ app.layout = html.Div(
                                                          "Submissions+open",
                                                     target="_blank",
                                                 ),
+                                                html.Br(),
+                                                "View the project on ", 
+                                                html.A("Github", href="https://github.com/AlwynYin/CANIS-Data-Visualization-Hackthon")
                                             ],
                                             style={"font-size": "12px"},
                                         )
@@ -318,7 +321,7 @@ app.layout = html.Div(
 )
 def bar_chart(region, languages, num_rows, medias, top):
     adj = "highest" if top == "Top" else "lowest"
-    title = f"Bar graph with {num_rows} {adj} media in {region}"
+    title = f"Bar chart with {num_rows} {adj} media in {region}"
 
     if isinstance(languages, list):
         lang = languages

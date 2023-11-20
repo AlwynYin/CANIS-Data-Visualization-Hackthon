@@ -3,7 +3,7 @@ import plotly.graph_objs as go
 import plotly.express as px
 
 
-def horizontal_bar(df: pd.DataFrame, regions: list[str], languages: list[str] = [], medias: list[str] = [], num_entities: int = -1, top: bool = True, method: str = "sum"):
+def horizontal_bar(df: pd.DataFrame, regions, languages = [], medias = [], num_entities: int = -1, top: bool = True, method: str = "sum"):
     """Returns the plotted graph with given values
         :param regions: regions desired, nonempty
         :param medias: the list of medias that is counted

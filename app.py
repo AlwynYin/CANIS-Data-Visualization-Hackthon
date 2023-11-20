@@ -336,7 +336,8 @@ def bar_chart(region, languages, num_rows, medias, top):
 
     return (
         title,
-        horizontal_bar(data_df, [region], languages=lang, medias=meds, num_entities=num_rows, top=(top == "Top"))
+        horizontal_bar(data_df, [region], languages=lang, medias=meds, num_entities=num_rows, top=(top == "Top")).
+        update_traces(hovertemplate="%{label}<br>" + "Media Count: %{value}")
     )
 
 

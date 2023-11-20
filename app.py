@@ -26,10 +26,10 @@ options_reg = [
     for key in regions
 ]
 
-medias = ["Twitter", "Facebook", "Instagram", "Threads", "Youtube", "Tiktok", "Max_media"]
+medias = ["Twitter", "Facebook", "Instagram", "Threads", "Youtube", "Tiktok", "Max_media", "All_media"]
 options_med = [
     dict(label=med, value=med)
-    for med in medias if med != "Max_media"
+    for med in medias
 ]
 # print(options_reg)
 
@@ -52,7 +52,7 @@ count_sunburst = count_sunburst.update_layout(
 sum_sunburst = px.sunburst(
     data_df,
     path=["States", "Specific", "Region"],
-    values="Sum_fol",
+    values="All_media_fol",
     # color="Group",
     color_discrete_sequence=px.colors.cyclical.HSV,
 ).update_traces(
@@ -92,7 +92,7 @@ drop_med = dcc.Dropdown(
     searchable=True,
     multi=True,
     options=options_med,
-    value=medias,
+    value="All_media",
     style={"margin": "4px", "box-shadow": "0px 0px #ebb36a", "border-color": "#ebb36a"},
 )
 
